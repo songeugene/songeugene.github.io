@@ -5,9 +5,9 @@
 } */
 
 :root{
-  --primary: rgb(109, 139, 229);
+  --primary: #3a3a3a;
   --primary-underline: rgba(97, 97, 97, 0.2);
-  --secondary: rgb(243, 243, 243);
+  --secondary: #fff1f2;
 }
 * {
   margin: 0;
