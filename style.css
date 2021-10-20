@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/* @font-face {
+  font-family: iAWriterMono;
+  src: url("iAWriterMonoS-Regular.ttf");
+} */
+
+:root{
+  --primary: rgb(109, 139, 229);
+  --primary-underline: rgba(97, 97, 97, 0.2);
+  --secondary: rgb(243, 243, 243);
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  font-family: neue-haas-unica, aktiv-grotesk, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  background: var(--secondary);
+  background-size: cover;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.landing {
+  padding: 60px 30px 30px 40px;
+  display: grid;
+  grid-template-columns: 710px 1fr;
+  column-gap: 40px;
+}
+
+.row-container {
+  grid-column-start: 1;
+}
+.row {
+  display: grid;
+  opacity: 0;
+  grid-template-columns: 180px 1fr;
+  margin-bottom: 58px;
+  animation: loadIn 0.8s 1s forwards;
+}
+
+
+.row:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.row:nth-child(2) {
+  animation-delay: 0.55s;
+}
+.row:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.row:last-child {
+  margin-bottom: 0px;
+  animation-delay: 0.65s;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+::selection {
+  color: none;
+  background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
+.indent {
+  margin-right: 28px;
+}
+
+a,
+p,
+span {
+  color: var(--primary);
+  line-height: 1.5em;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  z-index: 0;
+  width: auto;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-underline);
+}
+
+a:hover {
+  opacity: 0.6;
+  /* background: rgba(0, 0, 0, 0.03); */
+}
+
+p {
+  cursor: default;
+}
+
+.experience {
+  margin-bottom: 24px;
+}
+
+.media {
+  grid-column-start: 2;
+  width: 100%;
+  position: relative;
+}
+
+.portrait-container {
+  opacity: 0;
+  transition: 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-delay: 0.7s;
+}
+
+.hoverCard,
+.portrait {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  position: absolute;
+  z-index: 100 !important;
+  pointer-events: none;
+  transform: scale(1);
+  transition: 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hoverCard video, .hoverCard img {
+  border: .5px solid var(--primary-underline);
+  border-radius: 10px;
+}
+
+.hoverCard {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.media video,
+.media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.05);
+  max-height: 90vh;
+}
+
+.media p {
+  margin-top: 5px;
+  font-size: 15px;
+  opacity: 0.5;
+  letter-spacing: 0.003em;
+}
+
+.showHoverCard {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.show {
+  opacity: 0.4;
+  visibility: visible;
+}
+
+.hide {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.wrap {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: hidden;
+  pointer-events: none;
+  min-height: 100vh;
+}
+
+@keyframes loadIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 950px) {
+  .media {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    max-width: 510px;
+  }
+
+  .landing {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .landing {
+    padding: 32px 14px 14px 14px;
+    column-gap: 0;
+  }
+
+  .a:hover {
+    opacity: 0.7;
+  }
+
+  .wrap {
+    display: none;
+  }
+
+  .ball {
+    display: none;
+  }
+
+  footer {
+    left: 14px;
+    position: static;
+    margin-top: 0px;
+    padding-bottom: 25px;
+  }
+
+  a,
+  p,
+  span {
+    line-height: 1.5em;
+    font-size: 16px;
+    letter-spacing: 0em;
+  }
+}
