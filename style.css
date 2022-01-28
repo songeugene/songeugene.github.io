@@ -311,7 +311,7 @@ h6 {
 .project1::after {
   content: "supporting mindfulness";
   font-family: "Roboto Mono";
-  font-size: 36px;
+  font-size: 27px;
   position: relative;
   color: #737373;
   display: block;
@@ -329,7 +329,7 @@ h6 {
 .project2::after {
   content: "silvia internship";
   font-family: "Roboto Mono";
-  font-size: 36px;
+  font-size: 27px;
   position: relative;
   color: #737373;
   display: block;
@@ -347,7 +347,7 @@ h6 {
 .project3::after {
   content: "Data Visualization";
   font-family: "Roboto Mono";
-  font-size: 36px;
+  font-size: 27px;
   position: relative;
   color: #737373;
   display: block;
