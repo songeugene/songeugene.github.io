@@ -309,7 +309,7 @@ h6 {
 /* title color for main page */
 
 .project1::after {
-  content: "supporting mindfulness";
+  content: "Supporting Mindfulness";
   font-family: "Roboto Mono";
   font-size: 27px;
   position: relative;
@@ -327,7 +327,7 @@ h6 {
 }
 
 .project2::after {
-  content: "silvia internship";
+  content: "Silvia Internship";
   font-family: "Roboto Mono";
   font-size: 27px;
   position: relative;
